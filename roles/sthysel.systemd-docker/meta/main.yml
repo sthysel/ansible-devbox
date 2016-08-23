@@ -1,0 +1,10 @@
+galaxy_info:
+  author: CCG
+  description: Install systemd-docker
+  company: CCG
+  license: license BSD
+  min_ansible_version: 1.2
+  platforms:
+  - name: Ubuntu
+    versions:
+    - all

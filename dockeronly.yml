@@ -1,0 +1,9 @@
+---
+- hosts: localhost
+  become: yes
+  roles:
+    - sthysel.devpackages
+    - sthysel.systemd-docker
+    - sthysel.docker
+    - sthysel.devpi
+    - sthysel.squid

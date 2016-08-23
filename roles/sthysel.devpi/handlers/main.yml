@@ -1,0 +1,9 @@
+---
+- name: Restart devpi
+  service: name=devpi state=restarted
+
+- name: Enable devpi
+  service: name=devpi enabled=yes
+
+- name: Reload systemd
+  command: systemctl daemon-reload  

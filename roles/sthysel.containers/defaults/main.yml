@@ -1,0 +1,30 @@
+---
+containers:
+  - python:2
+  - python:3
+  - sthysel/python-base:ubuntu14.04-2.7
+  - sthysel/python-base:debian8-2.7
+  - sthysel/python-base:debian8-3.4
+  - sthysel/python-base:centos6-2.7
+  - sthysel/postfix
+  - sthysel/base:debian-8
+  - sthysel/base:ubuntu-14.04
+  - sthysel/base:ubuntu-15.10
+  - sthysel/nginx-uwsgi:1.7
+  - sthysel/devpi
+  - sthysel/squid-deb-proxy
+  - rabbitmq:3-management
+  - ubuntu:trusty
+  - mongo:2.6
+  - memcached:1.4
+  - nginx:1.9
+  - debian:sid
+  - debian:wheezy
+  - debian:jessie
+  - selenium/node-chrome:latest
+  - selenium/node-firefox:latest
+  - selenium/hub:latest
+  - centos:centos6
+  - postgres:9.3
+  - postgres:9.4
+  - java:7

@@ -1,0 +1,29 @@
+[Unit]
+Description=Development pypi server
+Requires=docker.service
+After=network.target docker.service
+
+[Service]
+Environment="DATA=/srv/docker-data/devpi"
+
+ExecStartPre=/bin/sh -c 'mkdir -p ${DATA} && chown 1000:1000 ${DATA}'
+ExecStartPre=/usr/bin/docker pull sthysel/devpi:latest
+
+ExecStart=/usr/local/go/bin/systemd-docker run \
+    -h 'devpi' --net bridge -m 0b -p 3141:3141 \
+    -v ${DATA}:/data \
+    -v /etc/localtime:/etc/localtime:ro \
+    --name %n \
+    --rm \
+    sthysel/devpi:latest
+
+KillSignal=INT
+TimeoutStartSec=0
+TimeoutStopSec=1
+RestartSec=60
+Restart=on-failure
+Type=notify
+NotifyAccess=all
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,26 @@
+---
+general:
+  - blueman
+  - git
+  - gitk
+  - gparted
+  - htop
+  - iotop
+  - iptraf
+  - parted
+  - shutter
+  - ssh
+  - tcpdump
+  - tmux
+  - tree
+  - vim-gtk
+  - volumeicon-alsa
+  - wget
+  - xclip
+  - xbacklight
+  - zsh
+  - golang
+
+powerline:
+  - powerline
+  - python-demjson

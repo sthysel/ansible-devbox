@@ -1,0 +1,16 @@
+---
+packages:
+  - dmenu
+  - dunst
+  - i3
+  - i3lock
+  - i3status
+  - blueman
+  - conky-all
+  - dzen2
+  - suckless-tools
+  - unclutter
+  - rxvt-unicode-256color
+  - xautolock
+  - xbacklight
+  - xclip

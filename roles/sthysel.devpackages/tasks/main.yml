@@ -1,0 +1,8 @@
+---
+- name: install development packages
+  apt: pkg={{item}}
+  with_items: "{{ general }}"
+
+- name: install powerline
+  apt: pkg={{item}}
+  with_items: "{{ powerline }}"

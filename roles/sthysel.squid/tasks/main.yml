@@ -1,0 +1,13 @@
+---
+- name: Set docker squid options (systemd)
+  template:
+    src: templates/squid.service
+    dest: /etc/systemd/system/squid.service
+    owner: root
+    group: root
+    mode: 0644
+  notify:
+    - Reload systemd
+    - Enable squid
+    - Restart squid
+  when: ansible_distribution_version|version_compare(15.04, '>=')

@@ -1,0 +1,29 @@
+[Unit]
+Description=Squid proxy cache
+Requires=docker.service
+After=network.target docker.service
+
+[Service]
+Environment="DATA=/srv/docker-data/squid"
+
+ExecStartPre=/bin/sh -c 'mkdir -p ${DATA} && chown 1000:1000 ${DATA}'
+ExecStartPre=/usr/bin/docker pull sthysel/squid-deb-proxy:latest
+
+ExecStart=/usr/local/go/bin/systemd-docker run \
+    -h 'squid' --net bridge -m 0b -p 3128:8000 \
+    -v ${DATA}:/data \
+    -v /etc/localtime:/etc/localtime:ro \
+    --name %n \
+    --rm \
+    sthysel/squid-deb-proxy:latest
+
+KillSignal=INT
+TimeoutStartSec=0
+TimeoutStopSec=1
+RestartSec=60
+Restart=on-failure
+Type=notify
+NotifyAccess=all
+
+[Install]
+WantedBy=multi-user.target

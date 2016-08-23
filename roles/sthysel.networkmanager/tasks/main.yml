@@ -1,0 +1,11 @@
+---
+- name: Disable dnsmasq
+  template:
+    src: templates/NetworkManager.conf
+    dest: /etc/NetworkManager/NetworkManager.conf
+    owner: root
+    group: root
+    mode: 0644
+  notify:
+    - Restart NetworkManager
+  when: ansible_distribution_version|version_compare(15.04, '>=')

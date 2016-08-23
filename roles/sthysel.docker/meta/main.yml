@@ -1,0 +1,16 @@
+---
+galaxy_info:
+  author: CCG
+  description: Installs docker
+  company: CCG
+  license: license BSD
+  min_ansible_version: 1.2
+  platforms:
+    - name: Ubuntu
+      versions:
+      - all
+  categories:
+    - system
+dependencies:
+  - {role: "angstwad.docker_ubuntu" }
+    

@@ -1,0 +1,3 @@
+---
+- user: name={{ realuser }} groups=docker append=yes
+- debug: msg="{{ realuser }} added to docker group"

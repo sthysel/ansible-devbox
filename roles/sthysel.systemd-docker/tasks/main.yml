@@ -1,0 +1,17 @@
+---
+- name: Install systemd-docker
+  command: go get -x -v github.com/ibuildthecloud/systemd-docker
+  register: install
+  environment:
+    PATH: "{{path}}"
+    GOPATH: "{{gopath}}"
+  ignore_errors: True
+
+- debug: var=install
+- debug: var=path
+- debug: var=gopath
+
+- name: Add the systemd-docker binary to /usr/local/go/bin
+  copy: src={{gopath}}/bin/systemd-docker
+        dest=/usr/local/go/bin
+        mode=0755

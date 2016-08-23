@@ -1,0 +1,3 @@
+---
+gopath: "{{ lookup('env', 'HOME') }}/.go/"
+path: "{{ lookup('env', 'PATH') }}"

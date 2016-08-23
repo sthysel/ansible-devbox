@@ -1,0 +1,9 @@
+---
+- name: Reload systemd
+  command: systemctl daemon-reload  
+
+- name: Restart squid
+  service: name=squid state=restarted
+
+- name: Enable squid
+  service: name=squid enabled=yes

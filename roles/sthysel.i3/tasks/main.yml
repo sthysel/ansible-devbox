@@ -1,0 +1,20 @@
+---
+- name: Add sur5r i3 repo
+  apt_repository: 
+    repo: deb http://debian.sur5r.net/i3/ {{ansible_lsb.codename}} universe
+    state: present
+    update_cache: yes
+
+- name: Install sur5r keyring
+  apt:
+    update_cache: yes
+    name: sur5r-keyring
+    state: latest
+    force: yes 
+
+- name: Install i3
+  apt: 
+    name: "{{ item }}" 
+    state: latest 
+    update_cache: yes 
+  with_items: "{{ packages }}"

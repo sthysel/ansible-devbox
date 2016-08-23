@@ -1,0 +1,6 @@
+---
+- name: Install containers
+  docker:
+    image: "{{item}}"
+    state: present
+  with_items: "{{containers}}"

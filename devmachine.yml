@@ -1,0 +1,12 @@
+---
+- hosts: localhost
+  become: yes
+  roles:
+    - sthysel.devpackages
+    - sthysel.docker
+    - sthysel.systemd-docker
+    - sthysel.devpi
+    - sthysel.squid
+    - sthysel.google-chrome
+    - sthysel.networkmanager
+    - sthysel.fw

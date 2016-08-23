@@ -1,0 +1,9 @@
+---
+- name: Configure and enable firewall
+  ufw: state=enabled policy=deny
+- name: Enable firewall logging
+  ufw: logging=on
+- name: Disallow SSH access to host
+  ufw: rule=reject name=OpenSSH
+- name: Allow docker containers to access the host
+  ufw: rule=allow interface=docker0 direction=in proto=tcp

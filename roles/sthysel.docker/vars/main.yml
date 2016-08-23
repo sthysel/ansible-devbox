@@ -1,0 +1,2 @@
+---
+realuser: "{{ lookup('env', 'USER') }}"
