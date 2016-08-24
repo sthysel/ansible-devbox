@@ -20,6 +20,7 @@ general:
   - xbacklight
   - zsh
   - golang
+  - silversearcher-ag
 
 powerline:
   - powerline
