@@ -1,7 +1,7 @@
 #!/bin/sh
 
 set -e
-VENV=${HOME}/ansible_env
+VENV=${HOME}/.virtualenvs/ansible
 
 virtualenv ${VENV}
 . ${VENV}/bin/activate
