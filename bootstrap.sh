@@ -3,7 +3,7 @@
 set -e
 
 # install virtualenv
-sudo apt-get install python-pip python-dev build-essential virtualenvwrapper
+sudo apt-get install python-pip python-dev build-essential virtualenvwrapper libffi-dev libssl-dev
 
 
 VENV=${HOME}/.virtualenvs/ansible
