@@ -1,6 +1,11 @@
 #!/bin/sh
 
 set -e
+
+# install virtualenv
+sudo apt-get install python-pip python-dev build-essential virtualenvwrapper
+
+
 VENV=${HOME}/.virtualenvs/ansible
 
 virtualenv ${VENV}
